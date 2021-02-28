@@ -46,10 +46,10 @@ namespace NUnitTestProject1
         {
             var mockService = new MockService();
             var log = new LogAnalyzer(mockService);
-            string short_name = "ali";
+            string short_name = "abc.ext";
 
             log.Analyze(short_name);
-            Assert.AreEqual("name is too short ali", mockService.LastError);
+            Assert.AreEqual("Filename too short:abc.ext", mockService.LastError);
         }
     }
 }

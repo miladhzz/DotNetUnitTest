@@ -14,9 +14,9 @@ namespace Unit_Test_Library
         }
         public void Analyze(string name)
         {
-            if (name.Length < 5)
+            if (name.Length < 8)
             {
-                _webService.LogError("name is too short " + name);
+                _webService.LogError("Filename too short:" + name);
             }
         }
         public int Id { get; set; }        
