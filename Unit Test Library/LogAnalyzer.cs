@@ -12,7 +12,7 @@ namespace Unit_Test_Library
             _webService = webService;
             FirstName = "Ali";
         }
-        public void Analyse(string name)
+        public void Analyze(string name)
         {
             if (name.Length < 5)
             {
