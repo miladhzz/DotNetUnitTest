@@ -26,11 +26,11 @@ namespace UnitTestDotNetFramework
         public void Analyze_TooShortFileName_ErrorLoggedToService()
         {
             var mocks = new MockRepository();
-            var simulatedService = mocks.StrictMock<IWebService>();
+            var simulatedService = mocks.DynamicMock<IWebService>();
 
             using (mocks.Record())
             {
-                simulatedService.LogError("Filename too short:abc.ext");
+                simulatedService.LogError("Filename too short555:abc.ext");
             }
 
             LogAnalyzer log = new LogAnalyzer(simulatedService);
