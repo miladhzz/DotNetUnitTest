@@ -6,10 +6,10 @@ using Unit_Test_Library;
 
 namespace NUnitTestProject1
 {
-    [TestFixture]
+    //[TestFixture]
     public class LogAnalyzerTests
     {
-        [Test]
+        //[Test]
         public void Analyze_TooShortFileName_CallsWebService()
         {
             ManualMockService mockService = new ManualMockService();

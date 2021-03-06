@@ -6,10 +6,10 @@ using Unit_Test_Library;
 
 namespace NUnitTestProject1
 {
-    [TestFixture]
+    //[TestFixture]
     public class LogAnalyzer2Tests
     {
-        [Test]
+        //[Test]
         public void Analyze_WebServiceThrows_SendsEmail()
         {
             var stubService = new StubService();

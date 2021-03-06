@@ -30,7 +30,7 @@ namespace UnitTestDotNetFramework
 
             using (mocks.Record())
             {
-                simulatedService.LogError("Filename too short555:abc.ext");
+                simulatedService.LogError("Filename too short:abc.ext");
             }
 
             LogAnalyzer log = new LogAnalyzer(simulatedService);
