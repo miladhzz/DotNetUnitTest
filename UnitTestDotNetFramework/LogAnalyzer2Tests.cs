@@ -14,7 +14,7 @@ namespace UnitTestDotNetFramework
     [TestFixture]
     public class LogAnalyzer2Tests
     {
-        [Test]
+        //[Test]
         public void Analyze_WebServiceThrows_SendsEmail()
         {
             var stubService = new StubService();
@@ -33,7 +33,7 @@ namespace UnitTestDotNetFramework
 
         }
 
-        [Test]
+        //[Test]
         public void Analyze_WebServiceThrows_SendsEmail2()
         {
             var mocks = new MockRepository();
@@ -54,6 +54,20 @@ namespace UnitTestDotNetFramework
             log.Analyze(tooShortFileName);
             mocks.VerifyAll();
 
+        }
+
+        [Test]
+        public void SimpleStringConstraints()
+        {
+            var mocks = new MockRepository();
+            var mockService = mocks.StrictMock<IWebService>();
+            using (mocks.Record())
+            {
+                mockService.LogError("ignored string");
+                LastCall.Constraints(new Rhino.Mocks.Constraints.Contains("abc"));
+            }
+            mockService.LogError(Guid.NewGuid() + " abc");
+            mocks.VerifyAll();
         }
 
     }

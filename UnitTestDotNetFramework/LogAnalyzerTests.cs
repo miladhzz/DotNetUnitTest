@@ -9,10 +9,10 @@ using UnitTestLibraryDotNetFramework;
 
 namespace UnitTestDotNetFramework
 {
-    [TestFixture]
+    //[TestFixture]
     public class LogAnalyzerTests
     {
-        [Test]
+        //[Test]
         public void Analyze_TooShortFileName_CallsWebService()
         {
             var mockService = new ManualMockService();
@@ -22,7 +22,7 @@ namespace UnitTestDotNetFramework
             Assert.AreEqual("Filename too short:abc.ext", mockService.LastError);
         }
 
-        [Test]
+        //[Test]
         public void Analyze_TooShortFileName_ErrorLoggedToService()
         {
             var mocks = new MockRepository();
